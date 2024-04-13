@@ -1,0 +1,19 @@
+
+/* inicio del grid */
+.container{
+    background-color: bisque;
+    border: 1px solid #000000;
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+.container div{
+    background-color: aqua;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+
+body{
+    background-color: #ddd;
+}
