@@ -90,3 +90,89 @@ otra que complementa esta propiedad es `mimax(min, si pasa del minimo`;
         </section>
     </div>
 ```
+
+# Ejemplo de maquetacion
+
+Nuevas propiedades
+
+* column-gap
+* row-gap
+* gap
+
+el gap es para utilizar las dos al mismo tiempo
+
+## HTML
+
+```
+    <body>
+        <div>
+            <img src="img/imgEjemplo1.jpg" alt="">
+            <img src="img/imgEjemplo2.jpg" alt="">
+            <img src="img/imgEjemplo3.jpg" alt="">
+            <img src="img/imgEjemplo1.jpg" alt="">
+            <img src="img/imgEjemplo2.jpg" alt="">
+            <img src="img/imgEjemplo3.jpg" alt="">
+            <img src="img/imgEjemplo1.jpg" alt="">
+            <img src="img/imgEjemplo2.jpg" alt="">
+            <img src="img/imgEjemplo3.jpg" alt="">
+        </div>
+    </body>
+
+```
+
+## CSS
+
+```
+    div{
+        width: 500px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    img{
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
+    }
+
+```
+
+Ejemplo de reposive en grid sin media query:
+
+``` 
+    div{
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(200px, 1fr)
+        );
+        gap: 10px; 
+        max-width: 620px;
+    }
+
+```
+
+Ahora una de las cosas mas importantes, manejar la cuadricula a la personalidad: 
+
+```
+    .container div:nth-child(1){
+        background-color: blueviolet;
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+```
+
+>[!NOTE]
+> Las propiedades que permiten esta cualidad: 
+
+*  grid-column: ;
+*  grid-row: ; 
+
+la forma en la que se le da un valor, es teniendo en cuenta el inicio y final que hay entre las columnas y filas
+
+> indicar el inicio y final : `1 / 2` 
+
+> indicar cuantas cendas o cuadriculas : `span 2` 
