@@ -27,34 +27,66 @@ Esta propiedad ``` grid-template-columns: 100px 100px; ```, sirve para indicarle
     }
 ```
 
+A la hora de establecer las columnas se general automaticamente las filas, asi que para manejarlas se utiliza lo siguiente: 
+
+```
+    grid-template-rows: 30px 50px 70px;
+
+```
 
 
+>[!NOTE]
+> si se quiere dejar en automatico pero se quiere establecer una medida de ancho se puede utilizar lo siguiente 
 
+```
+    grid-auto-rows: 20px;
 
+```
 
+otra curiosidad es un metodo que nos ayuda a repetir las veces necesarias para hacer las fracciones `repeat()`: 
 
+```
+    ...{
+          grid-template-columns: repeat(3, 1fr);
+    }
 
+    repeat(n, lo que se quiera repetir n veces); 
 
+```
+otra que complementa esta propiedad es `mimax(min, si pasa del minimo`; 
 
+>[!NOTE]
+> Ejemplo de minmax() aplicacion en el caso de aside
 
+## CSS
+```
+    div{
+        display: grid;
+        grid-template-columns: minmax(400px, 1fr) 5fr;
+    }
 
+    aside{
+        border: 2px solid #000000;
+        height: 100vh;
+    }
 
+    body{
+        margin: 0;
+    }
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## HTML
+```
+    <div>
+        <aside>
+            <ul>
+                <li>inicio</li>
+                <li>nosotros</li>
+                <li>configuraciones</li>
+            </ul>
+        </aside>
+        <section>
+            contenido de la pagina
+        </section>
+    </div>
+```
